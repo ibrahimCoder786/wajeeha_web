@@ -1,0 +1,92 @@
+:root {
+  --ink: #12171e;
+  --panel: #1b2430;
+  --paper: #eef2f5;
+  --muted: #5c6b7a;
+  --line: #8aa4bc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(200px, 32vw) 1fr;
+}
+
+aside {
+  background: var(--panel);
+  color: var(--paper);
+  display: flex;
+  align-items: flex-end;
+  padding: 8vh 7vw;
+}
+
+.mark {
+  font-weight: 500;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh 8vw;
+  border-left: 3px solid var(--line);
+}
+
+.eyebrow {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 11ch;
+}
+
+.role {
+  margin-top: 1.35rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 22vh 1fr;
+  }
+
+  aside {
+    align-items: center;
+    padding: 0 8vw;
+  }
+
+  section {
+    border-left: 0;
+    border-top: 3px solid var(--line);
+    justify-content: flex-start;
+    padding-top: 8vh;
+  }
+}
